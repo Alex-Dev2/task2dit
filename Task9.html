@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MVC</title>
+</head>
+<body>
+<p> Wordpress,bitrix,drupal,wix. Во время учебы в вордпресс редактировал как модератор контент, правил немного код верстки. Создавал плагин, который на нужную страницу, создавал форму заявки и отправлял в SQL. Ниже закомментированный код плагина. Он подключается. Потом на странице есть функция шорткод, туда что-то прописывал. И появлялась форма заявки, которая нигде не была в шаблоне темы. SQL базу данных, создавал в Openserver-phpmyadmin. Заявки в нее приходили. Пробовал немного натягивать вордпресс и битрикс верстку по ютуб, было очень криво. Если вопрос стоит, чем бы хотел заниматься из CMS, хотелось бы WP, так как на нем большинство сайтов.</p>
+</body>
+</html>
+
+<!--
+<?php
+/*
+Plugin Name: Addcurse
+Description:  Запись на курсы
+Author: Alexandr
+Version: 1.0.0 beta
+*/
+
+add_shortcode('addcurse','func');
+function func(){
+    ?>
+<form action="" method="post">
+    <label for="lastname">Фамилия</label>
+    <input type="text"  id="lastname" name="lastname" pattern="[А-я]+">
+    <br>
+    <label for="name">Имя</label>
+    <input type="text"   id="name" name="name"  pattern="[A-я]+">
+    <br>
+    <label for="surname">Отчество</label>
+    <input type="text" id="surname" name="surname"  pattern="[A-я]+">
+    <br>
+    <label for="e-mail">E-mail</label>
+    <input type="email" id="e-mail" name="email">
+    <br>
+    <label for="tel">Телефон</label>
+    <input type="tel" id="tel" name="tel">
+    <br>
+    <label for="kurs">Выбрать курс</label>
+    <select name="select" id="kurs" multiple  style="height: auto;">
+        <option value="Английский язык для взрослых">Английский язык для взрослых</option>
+        <option value="Английский язык для школьников">Английский язык для школьников</option>
+        <option value="Индивидуальный английский язык">Индивидуальный английский язык</option>
+        <option value="Корпоративное обучение">Корпоративное обучение</option>
+    </select>
+    <br>
+    <br>
+    <input type="submit" name="submit" >
+</form>
+<?php
+
+    if(isset($_POST['submit'])){
+        $lastname = $_POST['lastname'];
+        $name = $_POST['name'];
+        $surname = $_POST['surname'];
+        $email = $_POST['email'];
+        $tel = $_POST['tel'];
+        $kurs = $_POST['select'];
+        $link = mysqli_connect("127.0.0.1","root","","wptest");
+        mysqli_query($link,"INSERT INTO `wp_add`(`lastname`,`name `,`surname`,`email`,`tel`,`kurs`) VALUE ('$lastname','$name','$surname','$email','$tel','$kurs')");
+    }
+}
+?>
+-->
